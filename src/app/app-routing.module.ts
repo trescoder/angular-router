@@ -11,6 +11,7 @@ const routes: Routes = [
     component: TeamComponent,
     children: [{ path: ':id', component: TeamDetailsComponent }],
   },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
