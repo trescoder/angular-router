@@ -1,10 +1,18 @@
 li {
   list-style-type: none;
-  border-left: 4px solid lightseagreen;
-  padding-left: 5px;
   margin-bottom: 5px;
 }
 
 a {
+  padding-left: 3px;
   text-decoration: none;
+  border-left: 4px solid rgb(80, 240, 232);
+}
+
+.active {
+  border-left: 4px solid rgb(24, 138, 132);
+  padding-left: 5px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: rgb(24, 138, 132);
 }
