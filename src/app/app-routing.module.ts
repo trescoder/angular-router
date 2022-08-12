@@ -9,7 +9,13 @@ const routes: Routes = [
   {
     path: 'team',
     component: TeamComponent,
-    children: [{ path: ':id', component: TeamDetailsComponent }],
+    children: [
+      {
+        path: ':id', // he full route to render this child is /team/:id
+        // now this component is a child of the TeamComponent, which means, we can render this component inside TeamComponent
+        component: TeamDetailsComponent,
+      },
+    ],
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
