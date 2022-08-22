@@ -1,21 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { TeamDetailsComponent } from './team/team-details/team-details.component';
-import { TeamComponent } from './team/team-list/team.component';
+import { TeamRoutingModule } from './team/team-routing.module';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'team',
-    component: TeamComponent,
-    children: [
-      {
-        path: ':id', // the full route to render this child is /team/:id
-        // now this component is a child of the TeamComponent, which means, we can render this component inside TeamComponent
-        component: TeamDetailsComponent,
-      },
-    ],
+    loadChildren: () => import('./team/team.module').then((t) => t.TeamModule),
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
