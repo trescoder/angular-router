@@ -13,5 +13,6 @@ export class TeamComponent implements OnInit {
 
   async ngOnInit() {
     this.members = await this.teamService.getMembers();
+    console.log(this.members);
   }
 }

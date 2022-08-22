@@ -5,17 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { TeamComponent } from './team/team.component';
-import { TeamDetailsComponent } from './team-details/team-details.component';
+import { TeamModule } from './team/team.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    TeamComponent,
-    TeamDetailsComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, HomeComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, TeamModule],
   providers: [],
   bootstrap: [AppComponent],
 })
